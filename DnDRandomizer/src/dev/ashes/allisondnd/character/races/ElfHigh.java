@@ -1,4 +1,4 @@
-package dev.ashes.allisondnd.character.races.sub;
+package dev.ashes.allisondnd.character.races;
 
 import dev.ashes.allisondnd.character.classes.Bard;
 import dev.ashes.allisondnd.character.classes.Druid;
@@ -7,7 +7,6 @@ import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Wizard;
-import dev.ashes.allisondnd.character.races.Elf;
 
 public abstract class ElfHigh extends Elf {
 

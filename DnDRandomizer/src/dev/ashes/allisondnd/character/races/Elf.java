@@ -4,7 +4,7 @@ import dev.ashes.allisondnd.character.Race;
 
 public abstract class Elf extends Race {
 	public Elf(String name) {
-		super("Elf - " + name);
+		super(name + " Elf");
 	}
 
 }

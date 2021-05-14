@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.Race;
 
 public abstract class Dragonborn extends Race {
 	public Dragonborn(String name) {
-		super("Dragonborn - " + name);
+		super(name + " Dragonborn");
 	}
 }

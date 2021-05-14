@@ -5,28 +5,27 @@ import java.util.List;
 import java.util.Random;
 
 import dev.ashes.allisondnd.character.Race;
-import dev.ashes.allisondnd.character.races.Aarakocra;
-import dev.ashes.allisondnd.character.races.Bugbear;
-import dev.ashes.allisondnd.character.races.Dragonborn;
-import dev.ashes.allisondnd.character.races.Dwarf;
-import dev.ashes.allisondnd.character.races.Elf;
-import dev.ashes.allisondnd.character.races.Firbolg;
-import dev.ashes.allisondnd.character.races.Genasi;
-import dev.ashes.allisondnd.character.races.Gnome;
-import dev.ashes.allisondnd.character.races.Goblin;
-import dev.ashes.allisondnd.character.races.Goliath;
-import dev.ashes.allisondnd.character.races.HalfElf;
-import dev.ashes.allisondnd.character.races.HalfOrc;
-import dev.ashes.allisondnd.character.races.Halfling;
-import dev.ashes.allisondnd.character.races.Hobgoblin;
-import dev.ashes.allisondnd.character.races.Human;
-import dev.ashes.allisondnd.character.races.Kenku;
-import dev.ashes.allisondnd.character.races.OrcOfExandria;
-import dev.ashes.allisondnd.character.races.Tabaxi;
-import dev.ashes.allisondnd.character.races.Tiefling;
-import dev.ashes.allisondnd.character.races.Tortle;
+import dev.ashes.allisondnd.character.races.sub.Aarakocra;
 import dev.ashes.allisondnd.character.races.sub.AasimarFallen;
 import dev.ashes.allisondnd.character.races.sub.AasimarProtector;
+import dev.ashes.allisondnd.character.races.sub.AasimarScourge;
+import dev.ashes.allisondnd.character.races.sub.Bugbear;
+import dev.ashes.allisondnd.character.races.sub.DragonDraconblood;
+import dev.ashes.allisondnd.character.races.sub.DragonDragonborn;
+import dev.ashes.allisondnd.character.races.sub.DragonRavenite;
+import dev.ashes.allisondnd.character.races.sub.DwarfDuergar;
+import dev.ashes.allisondnd.character.races.sub.DwarfHill;
+import dev.ashes.allisondnd.character.races.sub.DwarfMountain;
+import dev.ashes.allisondnd.character.races.sub.ElfDark;
+import dev.ashes.allisondnd.character.races.sub.ElfEladrin;
+import dev.ashes.allisondnd.character.races.sub.ElfHighType1;
+import dev.ashes.allisondnd.character.races.sub.ElfHighType2;
+import dev.ashes.allisondnd.character.races.sub.ElfPallid;
+import dev.ashes.allisondnd.character.races.sub.ElfSea;
+import dev.ashes.allisondnd.character.races.sub.ElfType1;
+import dev.ashes.allisondnd.character.races.sub.ElfType2;
+import dev.ashes.allisondnd.character.races.sub.ElfWood;
+import dev.ashes.allisondnd.character.races.sub.Firbolg;
 
 public class CharacterRandomizer {
 
@@ -34,11 +33,13 @@ public class CharacterRandomizer {
 
 	public static void main(String[] args) {
 		addRaces();
+		
+		//Window w = new Window();
+		
 		Random r = new Random();
-		Race f = new AasimarFallen();
-		for (int x = 0; x < 17; x++) {
-			int d = r.nextInt(f.getMaxDiceValue()) + 1;
-			System.out.println("Dice " + (x + 1) + ": " + f.getClassName(x + 1));
+		
+		for(Race race : races) {
+			System.out.println(race.getRaceName());
 		}
 	}
 
@@ -46,15 +47,28 @@ public class CharacterRandomizer {
 		races.add(new Aarakocra());
 		races.add(new AasimarFallen());
 		races.add(new AasimarProtector());
-		/*
-		 * races.add(new Bugbear()); races.add(new Dragonborn()); races.add(new
-		 * Dwarf()); races.add(new Elf()); races.add(new Firbolg()); races.add(new
-		 * Genasi()); races.add(new Gnome()); races.add(new Goblin()); races.add(new
-		 * Goliath()); races.add(new HalfElf()); races.add(new Halfling());
-		 * races.add(new HalfOrc()); races.add(new Hobgoblin()); races.add(new Human());
-		 * races.add(new Kenku()); races.add(new OrcOfExandria()); races.add(new
-		 * Tabaxi()); races.add(new Tiefling()); races.add(new Tortle());
-		 */
+		races.add(new AasimarScourge());
+		races.add(new Bugbear());
+		races.add(new DragonDraconblood());
+		races.add(new DragonDragonborn());
+		races.add(new DragonRavenite());
+		races.add(new DwarfDuergar());
+		races.add(new DwarfHill());
+		races.add(new DwarfMountain());
+		races.add(new ElfDark());
+		races.add(new ElfEladrin());
+		races.add(new ElfHighType1(ElfType1.GRAY));
+		races.add(new ElfHighType1(ElfType1.SILVANESTI));
+		races.add(new ElfHighType1(ElfType1.SUN));
+		races.add(new ElfHighType1(ElfType1.VALLEY));
+		races.add(new ElfHighType2(ElfType2.HIGH));
+		races.add(new ElfHighType2(ElfType2.MOON));
+		races.add(new ElfHighType2(ElfType2.QUALINESTI));
+		races.add(new ElfPallid());
+		races.add(new ElfSea());
+		races.add(new ElfWood());
+		races.add(new Firbolg());
+		
 	}
 
 }

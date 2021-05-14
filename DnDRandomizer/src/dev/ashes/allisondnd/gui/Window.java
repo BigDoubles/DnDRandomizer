@@ -10,7 +10,8 @@ public class Window extends JFrame {
 		super("DnD Randomizer");
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		this.setSize(1080, 720);
+		this.setVisible(true);
 	}
 
 }
