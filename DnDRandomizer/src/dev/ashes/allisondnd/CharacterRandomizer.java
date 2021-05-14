@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import dev.ashes.allisondnd.character.races.Aasimar;
-import dev.ashes.allisondnd.character.races.Arakocra;
+import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.races.Aarakocra;
 import dev.ashes.allisondnd.character.races.Bugbear;
 import dev.ashes.allisondnd.character.races.Dragonborn;
 import dev.ashes.allisondnd.character.races.Dwarf;
@@ -25,22 +25,28 @@ import dev.ashes.allisondnd.character.races.OrcOfExandria;
 import dev.ashes.allisondnd.character.races.Tabaxi;
 import dev.ashes.allisondnd.character.races.Tiefling;
 import dev.ashes.allisondnd.character.races.Tortle;
+import dev.ashes.allisondnd.character.races.sub.Fallen;
+import dev.ashes.allisondnd.character.races.sub.Protector;
 
 public class CharacterRandomizer {
 
-	private static List<dev.ashes.allisondnd.character.Race> races = new ArrayList<>();
+	private static List<Race> races = new ArrayList<>();
 
 	public static void main(String[] args) {
 		addRaces();
 		Random r = new Random();
-		for (int a = 0; a < 20; a++)
-			System.out.println(a + 1 + ": " + races.get(r.nextInt(races.size())).getRaceName());
+		Race f = new Fallen();
+		for(int x = 0; x < 15; x++) {
+			int d = r.nextInt(f.getMaxDiceValue())+1;
+			System.out.println("Dice " + d + ": " + f.getClassName(d));
+		}
 	}
 
 	private static void addRaces() {
-		races.add(new Aasimar());
-		races.add(new Arakocra());
-		races.add(new Bugbear());
+		races.add(new Aarakocra());
+		races.add(new Fallen());
+		races.add(new Protector());
+		/*races.add(new Bugbear());
 		races.add(new Dragonborn());
 		races.add(new Dwarf());
 		races.add(new Elf());
@@ -58,7 +64,7 @@ public class CharacterRandomizer {
 		races.add(new OrcOfExandria());
 		races.add(new Tabaxi());
 		races.add(new Tiefling());
-		races.add(new Tortle());
+		races.add(new Tortle());*/
 	}
 
 }
