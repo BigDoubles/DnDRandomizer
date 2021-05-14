@@ -1,25 +1,25 @@
 package dev.ashes.allisondnd.character.races.sub;
 
+import dev.ashes.allisondnd.character.classes.Barbarian;
 import dev.ashes.allisondnd.character.classes.Bard;
-import dev.ashes.allisondnd.character.classes.Druid;
 import dev.ashes.allisondnd.character.classes.Fighter;
 import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Rogue;
-import dev.ashes.allisondnd.character.classes.Wizard;
+import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.races.Elf;
 
-public abstract class ElfHigh extends Elf {
+public class ElfSea extends Elf {
 
-	public ElfHigh(String name) {
-		super(name + " High");
-		addClass(new Bard(), 1);
-		addClass(new Druid(), 2);
-		addClass(new Fighter(), 3);
-		addClass(new Monk(), 5);
-		addClass(new Ranger(), 7);
+	public ElfSea() {
+		super("Sea");
+		addClass(new Barbarian(), 1);
+		addClass(new Bard(), 2);
+		addClass(new Fighter(), 4);
+		addClass(new Monk(), 6);
+		addClass(new Ranger(), 8);
 		addClass(new Rogue(), 10);
-		addClass(new Wizard(), 12);
+		addClass(new Sorcerer(), 11);
 	}
 
 }
