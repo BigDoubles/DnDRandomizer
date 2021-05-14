@@ -36,9 +36,9 @@ public class CharacterRandomizer {
 		addRaces();
 		Random r = new Random();
 		Race f = new Fallen();
-		for(int x = 0; x < 15; x++) {
+		for(int x = 0; x < 17; x++) {
 			int d = r.nextInt(f.getMaxDiceValue())+1;
-			System.out.println("Dice " + d + ": " + f.getClassName(d));
+			System.out.println("Dice " + (x+1) + ": " + f.getClassName(x+1));
 		}
 	}
 
