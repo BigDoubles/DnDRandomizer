@@ -11,9 +11,9 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.races.Elf;
 
-public class Dark extends Elf {
+public class ElfDark extends Elf {
 
-	public Dark() {
+	public ElfDark() {
 		super("Dark");
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);

@@ -19,6 +19,7 @@ public class Bugbear extends Race {
 		addClass(new Monk(), 9);
 		addClass(new Paladin(), 10);
 		addClass(new Ranger(), 13);
-		addClass(new Rogue(), 15);}
+		addClass(new Rogue(), 15);
+	}
 
 }

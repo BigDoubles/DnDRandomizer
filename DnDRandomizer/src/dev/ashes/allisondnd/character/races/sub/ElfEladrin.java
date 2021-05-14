@@ -9,9 +9,9 @@ import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Wizard;
 import dev.ashes.allisondnd.character.races.Elf;
 
-public class Eladrin extends Elf {
+public class ElfEladrin extends Elf {
 
-	public Eladrin() {
+	public ElfEladrin() {
 		super("Eladrin");
 		addClass(new Bard(), 1);
 		addClass(new Druid(), 2);

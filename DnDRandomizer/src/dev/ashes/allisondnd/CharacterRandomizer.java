@@ -25,8 +25,8 @@ import dev.ashes.allisondnd.character.races.OrcOfExandria;
 import dev.ashes.allisondnd.character.races.Tabaxi;
 import dev.ashes.allisondnd.character.races.Tiefling;
 import dev.ashes.allisondnd.character.races.Tortle;
-import dev.ashes.allisondnd.character.races.sub.Fallen;
-import dev.ashes.allisondnd.character.races.sub.Protector;
+import dev.ashes.allisondnd.character.races.sub.AasimarFallen;
+import dev.ashes.allisondnd.character.races.sub.AasimarProtector;
 
 public class CharacterRandomizer {
 
@@ -35,36 +35,26 @@ public class CharacterRandomizer {
 	public static void main(String[] args) {
 		addRaces();
 		Random r = new Random();
-		Race f = new Fallen();
-		for(int x = 0; x < 17; x++) {
-			int d = r.nextInt(f.getMaxDiceValue())+1;
-			System.out.println("Dice " + (x+1) + ": " + f.getClassName(x+1));
+		Race f = new AasimarFallen();
+		for (int x = 0; x < 17; x++) {
+			int d = r.nextInt(f.getMaxDiceValue()) + 1;
+			System.out.println("Dice " + (x + 1) + ": " + f.getClassName(x + 1));
 		}
 	}
 
 	private static void addRaces() {
 		races.add(new Aarakocra());
-		races.add(new Fallen());
-		races.add(new Protector());
-		/*races.add(new Bugbear());
-		races.add(new Dragonborn());
-		races.add(new Dwarf());
-		races.add(new Elf());
-		races.add(new Firbolg());
-		races.add(new Genasi());
-		races.add(new Gnome());
-		races.add(new Goblin());
-		races.add(new Goliath());
-		races.add(new HalfElf());
-		races.add(new Halfling());
-		races.add(new HalfOrc());
-		races.add(new Hobgoblin());
-		races.add(new Human());
-		races.add(new Kenku());
-		races.add(new OrcOfExandria());
-		races.add(new Tabaxi());
-		races.add(new Tiefling());
-		races.add(new Tortle());*/
+		races.add(new AasimarFallen());
+		races.add(new AasimarProtector());
+		/*
+		 * races.add(new Bugbear()); races.add(new Dragonborn()); races.add(new
+		 * Dwarf()); races.add(new Elf()); races.add(new Firbolg()); races.add(new
+		 * Genasi()); races.add(new Gnome()); races.add(new Goblin()); races.add(new
+		 * Goliath()); races.add(new HalfElf()); races.add(new Halfling());
+		 * races.add(new HalfOrc()); races.add(new Hobgoblin()); races.add(new Human());
+		 * races.add(new Kenku()); races.add(new OrcOfExandria()); races.add(new
+		 * Tabaxi()); races.add(new Tiefling()); races.add(new Tortle());
+		 */
 	}
 
 }

@@ -9,10 +9,11 @@ import dev.ashes.allisondnd.character.classes.Paladin;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
+import dev.ashes.allisondnd.character.races.Dragonborn;
 
-public class Dragonborn extends dev.ashes.allisondnd.character.races.Dragonborn {
+public class DragonDragonborn extends Dragonborn {
 
-	public Dragonborn() {
+	public DragonDragonborn() {
 		super("Dragonborn");
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 4);

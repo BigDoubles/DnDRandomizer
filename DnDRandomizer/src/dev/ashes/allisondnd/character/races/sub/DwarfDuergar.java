@@ -8,9 +8,9 @@ import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.races.Dwarf;
 
-public class Duergar extends Dwarf {
+public class DwarfDuergar extends Dwarf {
 
-	public Duergar() {
+	public DwarfDuergar() {
 		super("Duergar");
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);

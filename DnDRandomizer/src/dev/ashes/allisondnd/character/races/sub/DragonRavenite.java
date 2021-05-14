@@ -6,12 +6,12 @@ import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Paladin;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
-import dev.ashes.allisondnd.character.races.Dwarf;
+import dev.ashes.allisondnd.character.races.Dragonborn;
 
-public class Mountain extends Dwarf {
+public class DragonRavenite extends Dragonborn {
 
-	public Mountain() {
-		super("Mountain");
+	public DragonRavenite() {
+		super("Ravenite");
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

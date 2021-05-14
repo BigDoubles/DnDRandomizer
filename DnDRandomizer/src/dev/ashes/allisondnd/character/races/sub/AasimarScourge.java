@@ -9,8 +9,8 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.races.Aasimar;
 
-public class Scourge extends Aasimar {
-	public Scourge() {
+public class AasimarScourge extends Aasimar {
+	public AasimarScourge() {
 		super("Scourge");
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 3);

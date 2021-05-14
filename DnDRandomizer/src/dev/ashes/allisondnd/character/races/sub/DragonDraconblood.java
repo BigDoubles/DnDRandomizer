@@ -10,9 +10,9 @@ import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.classes.Wizard;
 import dev.ashes.allisondnd.character.races.Dragonborn;
 
-public class Draconblood extends Dragonborn {
+public class DragonDraconblood extends Dragonborn {
 
-	public Draconblood() {
+	public DragonDraconblood() {
 		super("Draconblood");
 		addClass(new Bard(), 2);
 		addClass(new Cleric(), 3);
