@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.Race;
 
 public class Goblin extends Race {
 	public Goblin() {
-		super("Goblin");
+		super(Races.GOBLIN.getName());
 	}
 }

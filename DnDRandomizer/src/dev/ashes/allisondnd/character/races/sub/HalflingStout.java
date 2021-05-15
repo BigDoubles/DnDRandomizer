@@ -7,12 +7,11 @@ import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
-import dev.ashes.allisondnd.character.races.Elf;
+import dev.ashes.allisondnd.character.races.Halfling;
 
-public class ElfSea extends Elf {
-
-	public ElfSea() {
-		super(Subraces.ELFSEA.getName());
+public class HalflingStout extends Halfling {
+	public HalflingStout() {
+		super(Subraces.HALFLINGSTOUT.getName());
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 2);
 		addClass(new Fighter(), 4);
@@ -21,5 +20,4 @@ public class ElfSea extends Elf {
 		addClass(new Rogue(), 10);
 		addClass(new Sorcerer(), 11);
 	}
-
 }

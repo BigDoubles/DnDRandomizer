@@ -2,16 +2,17 @@ package dev.ashes.allisondnd.character;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Race {
 	private List<IClasses> classes;
 	private List<Integer> classWeights;
-	private String raceName;
+	private String fullRaceName;
 
 	public Race(String name) {
 		classes = new ArrayList<IClasses>();
 		classWeights = new ArrayList<Integer>();
-		raceName = name;
+		fullRaceName = name;
 	}
 
 	protected final void addClass(IClasses name, int weight) {
@@ -19,21 +20,26 @@ public abstract class Race {
 		classWeights.add(weight);
 	}
 
-	public String getRaceName() {
-		return raceName;
+	public String getFullRaceName() {
+		return fullRaceName;
 	}
 
 	public String getRaceInfo() {
-		String info = raceName + ": ";
+		String info = fullRaceName + ": ";
 		for (int x = 0; x < classes.size(); x++) {
 			info += classes.get(x).getName() + " (" + classWeights.get(x) + "), ";
 		}
 		return info.substring(0, info.length() - 2);
 	}
 
+	// Simply returns a random class in the list with correct probabilities
+	public String getRandomClassName() {
+		Random r = new Random();
+		return getClassName(r.nextInt(getMaxDiceValue()));
+	}
+	
 	/*
-	 * TODO ensure that functionality is correct Takes a random "dice" roll and
-	 * returns the value that is greatest without going over
+	 * Returns the value that is greatest without going over
 	 */
 	public String getClassName(int roll) {
 		if (roll <= classWeights.get(0))

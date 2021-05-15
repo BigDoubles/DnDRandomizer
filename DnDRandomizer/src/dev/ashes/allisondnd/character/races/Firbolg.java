@@ -1,4 +1,4 @@
-package dev.ashes.allisondnd.character.races.sub;
+package dev.ashes.allisondnd.character.races;
 
 import dev.ashes.allisondnd.character.Race;
 import dev.ashes.allisondnd.character.classes.Barbarian;

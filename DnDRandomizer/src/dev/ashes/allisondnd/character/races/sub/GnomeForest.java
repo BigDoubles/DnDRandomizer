@@ -1,4 +1,4 @@
-package dev.ashes.allisondnd.character.races;
+package dev.ashes.allisondnd.character.races.sub;
 
 import dev.ashes.allisondnd.character.classes.Bard;
 import dev.ashes.allisondnd.character.classes.Druid;
@@ -7,11 +7,11 @@ import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Wizard;
+import dev.ashes.allisondnd.character.races.Gnome;
 
-public abstract class ElfHigh extends Elf {
-
-	public ElfHigh(String name) {
-		super(name + " High");
+public class GnomeForest extends Gnome {
+	public GnomeForest() {
+		super(Subraces.GNOMEFOREST.getName());
 		addClass(new Bard(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);
@@ -20,5 +20,4 @@ public abstract class ElfHigh extends Elf {
 		addClass(new Rogue(), 10);
 		addClass(new Wizard(), 12);
 	}
-
 }

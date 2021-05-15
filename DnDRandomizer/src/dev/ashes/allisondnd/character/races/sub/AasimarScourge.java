@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Aasimar;
 
 public class AasimarScourge extends Aasimar {
 	public AasimarScourge() {
-		super("Scourge");
+		super(Subraces.AASIMARSCOURGE.getName());
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);

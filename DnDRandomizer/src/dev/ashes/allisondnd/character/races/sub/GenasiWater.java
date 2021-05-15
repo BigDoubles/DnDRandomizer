@@ -1,30 +1,29 @@
 package dev.ashes.allisondnd.character.races.sub;
 
-import dev.ashes.allisondnd.character.Race;
-import dev.ashes.allisondnd.character.classes.Bard;
+import dev.ashes.allisondnd.character.classes.Barbarian;
 import dev.ashes.allisondnd.character.classes.Cleric;
 import dev.ashes.allisondnd.character.classes.Druid;
 import dev.ashes.allisondnd.character.classes.Fighter;
 import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Paladin;
 import dev.ashes.allisondnd.character.classes.Ranger;
-import dev.ashes.allisondnd.character.classes.Rogue;
+import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.classes.Wizard;
+import dev.ashes.allisondnd.character.races.Genasi;
 
-public class Aarakocra extends Race {
-	public Aarakocra() {
-		super("Arakocra");
-
-		addClass(new Bard(), 1);
+public class GenasiWater extends Genasi {
+	public GenasiWater() {
+		super(Subraces.GENASIWATER.getName());
+		addClass(new Barbarian(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);
 		addClass(new Fighter(), 6);
-		addClass(new Monk(), 9);
-		addClass(new Paladin(), 10);
-		addClass(new Ranger(), 13);
-		addClass(new Rogue(), 15);
-		addClass(new Warlock(), 16);
-		addClass(new Wizard(), 17);
+		addClass(new Monk(), 7);
+		addClass(new Paladin(), 8);
+		addClass(new Ranger(), 9);
+		addClass(new Sorcerer(), 10);
+		addClass(new Warlock(), 11);
+		addClass(new Wizard(), 12);
 	}
 }

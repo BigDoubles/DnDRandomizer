@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.races.Dragonborn;
 public class DragonDragonborn extends Dragonborn {
 
 	public DragonDragonborn() {
-		super("Dragonborn");
+		super();
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 4);
 		addClass(new Cleric(), 5);

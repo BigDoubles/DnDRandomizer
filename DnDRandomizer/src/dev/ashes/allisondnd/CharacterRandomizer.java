@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 import dev.ashes.allisondnd.character.Race;
-import dev.ashes.allisondnd.character.races.sub.Aarakocra;
+import dev.ashes.allisondnd.character.races.Aarakocra;
+import dev.ashes.allisondnd.character.races.Bugbear;
+import dev.ashes.allisondnd.character.races.Firbolg;
 import dev.ashes.allisondnd.character.races.sub.AasimarFallen;
 import dev.ashes.allisondnd.character.races.sub.AasimarProtector;
 import dev.ashes.allisondnd.character.races.sub.AasimarScourge;
-import dev.ashes.allisondnd.character.races.sub.Bugbear;
 import dev.ashes.allisondnd.character.races.sub.DragonDraconblood;
 import dev.ashes.allisondnd.character.races.sub.DragonDragonborn;
 import dev.ashes.allisondnd.character.races.sub.DragonRavenite;
@@ -25,7 +26,6 @@ import dev.ashes.allisondnd.character.races.sub.ElfSea;
 import dev.ashes.allisondnd.character.races.sub.ElfType1;
 import dev.ashes.allisondnd.character.races.sub.ElfType2;
 import dev.ashes.allisondnd.character.races.sub.ElfWood;
-import dev.ashes.allisondnd.character.races.sub.Firbolg;
 
 public class CharacterRandomizer {
 
@@ -38,8 +38,9 @@ public class CharacterRandomizer {
 		
 		Random r = new Random();
 		
-		for(Race race : races) {
-			System.out.println(race.getRaceName());
+		for(int x = 0; x < 22; x++) {
+			int f = r.nextInt(races.size());
+			System.out.println(races.get(f).getFullRaceName() + ", " + races.get(f).getRandomClassName() );
 		}
 	}
 

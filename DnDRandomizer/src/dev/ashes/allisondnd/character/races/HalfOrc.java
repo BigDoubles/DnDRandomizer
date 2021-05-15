@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.Race;
 
 public class HalfOrc extends Race {
 	public HalfOrc() {
-		super("Half-Orc");
+		super(Races.HALFORC.getName());
 	}
 }

@@ -1,4 +1,4 @@
-package dev.ashes.allisondnd.character.races.sub;
+package dev.ashes.allisondnd.character.races;
 
 import dev.ashes.allisondnd.character.Race;
 import dev.ashes.allisondnd.character.classes.Barbarian;
@@ -12,7 +12,7 @@ import dev.ashes.allisondnd.character.classes.Rogue;
 public class Bugbear extends Race {
 
 	public Bugbear() {
-		super("Bugbear");
+		super(Races.BUGBEAR.getName());
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 3);
 		addClass(new Fighter(), 6);

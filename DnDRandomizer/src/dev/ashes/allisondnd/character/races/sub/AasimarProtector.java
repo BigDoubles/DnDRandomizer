@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.races.Aasimar;
 
 public class AasimarProtector extends Aasimar {
 	public AasimarProtector() {
-		super("Protector");
+		super(Subraces.AASIMARPROTECTOR.getName());
 		addClass(new Bard(), 2);
 		addClass(new Cleric(), 5);
 		addClass(new Druid(), 7);

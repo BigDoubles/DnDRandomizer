@@ -2,8 +2,8 @@ package dev.ashes.allisondnd.character.races;
 
 import dev.ashes.allisondnd.character.Race;
 
-public class Halfling extends Race {
-	public Halfling() {
-		super("Halfling");
+public abstract class Halfling extends Race {
+	public Halfling(String sub) {
+		super(sub + " " + Races.HALFLING.getName());
 	}
 }

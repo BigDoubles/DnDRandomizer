@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Dwarf;
 public class DwarfMountain extends Dwarf {
 
 	public DwarfMountain() {
-		super("Mountain");
+		super(Subraces.DWARFMOUNTAIN.getName());
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

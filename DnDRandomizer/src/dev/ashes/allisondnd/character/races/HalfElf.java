@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.Race;
 
 public class HalfElf extends Race {
 	public HalfElf() {
-		super("Half-Elf");
+		super(Races.HALFELF.getName());
 	}
 }

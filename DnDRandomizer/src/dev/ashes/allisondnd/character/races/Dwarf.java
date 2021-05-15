@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.Race;
 
 public abstract class Dwarf extends Race {
 	public Dwarf(String name) {
-		super(name + " Dwarf");
+		super(name + " " + Races.DWARF.getName());
 	}
 }

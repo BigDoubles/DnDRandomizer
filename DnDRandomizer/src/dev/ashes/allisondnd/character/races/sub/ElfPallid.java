@@ -15,7 +15,7 @@ import dev.ashes.allisondnd.character.races.Elf;
 public class ElfPallid extends Elf {
 
 	public ElfPallid() {
-		super("Pallid");
+		super(Subraces.ELFPALLID.getName());
 		addClass(new Bard(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);

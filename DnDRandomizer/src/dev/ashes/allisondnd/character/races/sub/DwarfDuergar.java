@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Dwarf;
 public class DwarfDuergar extends Dwarf {
 
 	public DwarfDuergar() {
-		super("Duergar");
+		super(Subraces.DWARFDUERGAR.getName());
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

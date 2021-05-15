@@ -9,12 +9,11 @@ import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
-import dev.ashes.allisondnd.character.races.Elf;
+import dev.ashes.allisondnd.character.races.Halfling;
 
-public class ElfDark extends Elf {
-
-	public ElfDark() {
-		super(Subraces.ELFDARK.getName());
+public class HalflingLightfoot extends Halfling {
+	public HalflingLightfoot() {
+		super(Subraces.HALFLINGLIGHTFOOT.getName());
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);
 		addClass(new Fighter(), 5);
@@ -25,5 +24,4 @@ public class ElfDark extends Elf {
 		addClass(new Sorcerer(), 15);
 		addClass(new Warlock(), 17);
 	}
-
 }

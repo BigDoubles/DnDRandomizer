@@ -6,12 +6,11 @@ import dev.ashes.allisondnd.character.classes.Monk;
 import dev.ashes.allisondnd.character.classes.Paladin;
 import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
-import dev.ashes.allisondnd.character.races.Dragonborn;
+import dev.ashes.allisondnd.character.races.Genasi;
 
-public class DragonRavenite extends Dragonborn {
-
-	public DragonRavenite() {
-		super(Subraces.DRAGONRAVENITE.getName());
+public class GenasiEarth extends Genasi {
+	public GenasiEarth() {
+		super(Subraces.GENASIEARTH.getName());
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);
@@ -19,5 +18,4 @@ public class DragonRavenite extends Dragonborn {
 		addClass(new Ranger(), 9);
 		addClass(new Sorcerer(), 10);
 	}
-
 }
