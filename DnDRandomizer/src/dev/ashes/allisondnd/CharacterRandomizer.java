@@ -2,7 +2,6 @@ package dev.ashes.allisondnd;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import dev.ashes.allisondnd.character.Race;
 import dev.ashes.allisondnd.character.races.Aarakocra;
@@ -54,6 +53,7 @@ import dev.ashes.allisondnd.character.races.sub.HumanRashemi;
 import dev.ashes.allisondnd.character.races.sub.HumanShou;
 import dev.ashes.allisondnd.character.races.sub.HumanTethyrian;
 import dev.ashes.allisondnd.character.races.sub.HumanTurami;
+import dev.ashes.allisondnd.gui.Window;
 
 public class CharacterRandomizer {
 
@@ -62,17 +62,8 @@ public class CharacterRandomizer {
 	public static void main(String[] args) {
 		addRaces();
 		
-		//Window w = new Window();
+		new Window(races);
 		
-		Random f = new Random();
-		
-		/*for(int x = 0; x < 22; x++) {
-			int f = r.nextInt(races.size());
-			System.out.println(races.get(f).getFullRaceName() + ", " + races.get(f).getRandomClassName() );
-		}*/
-		for(Race r : races) {
-			System.out.println(r.getRaceInfo());
-		}
 	}
 
 	private static void addRaces() {
@@ -130,5 +121,7 @@ public class CharacterRandomizer {
 		races.add(new HumanTethyrian());
 		races.add(new HumanTurami());
 	}
+	
+	
 
 }
