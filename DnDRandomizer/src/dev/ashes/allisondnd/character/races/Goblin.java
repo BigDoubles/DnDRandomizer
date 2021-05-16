@@ -1,9 +1,23 @@
 package dev.ashes.allisondnd.character.races;
 
 import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.classes.Barbarian;
+import dev.ashes.allisondnd.character.classes.Bard;
+import dev.ashes.allisondnd.character.classes.Fighter;
+import dev.ashes.allisondnd.character.classes.Monk;
+import dev.ashes.allisondnd.character.classes.Ranger;
+import dev.ashes.allisondnd.character.classes.Rogue;
+import dev.ashes.allisondnd.character.classes.Sorcerer;
 
 public class Goblin extends Race {
 	public Goblin() {
 		super(Races.GOBLIN.getName());
+		addClass(new Barbarian(), 1);
+		addClass(new Bard(), 2);
+		addClass(new Fighter(), 4);
+		addClass(new Monk(), 6);
+		addClass(new Ranger(), 8);
+		addClass(new Rogue(), 10);
+		addClass(new Sorcerer(), 11);
 	}
 }
