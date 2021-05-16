@@ -10,11 +10,11 @@ import dev.ashes.allisondnd.character.classes.Ranger;
 import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.races.Dragonborn;
+import dev.ashes.allisondnd.character.races.Races;
 
 public class DragonDragonborn extends Dragonborn {
 
 	public DragonDragonborn() {
-		super();
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 4);
 		addClass(new Cleric(), 5);
@@ -26,4 +26,8 @@ public class DragonDragonborn extends Dragonborn {
 		addClass(new Warlock(), 16);
 	}
 
+	@Override
+	public String getFullRaceName() {
+		return Races.DRAGONBORN.getName();
+	}
 }

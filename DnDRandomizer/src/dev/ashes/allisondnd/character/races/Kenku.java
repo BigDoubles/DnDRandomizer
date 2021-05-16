@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class Kenku extends Race {
 	public Kenku() {
-		super(Races.KENKU.getName());
+		super(Races.KENKU);
 		addClass(new Bard(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);

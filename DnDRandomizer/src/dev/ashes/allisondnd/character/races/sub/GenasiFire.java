@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.races.Genasi;
 
 public class GenasiFire extends Genasi {
 	public GenasiFire() {
-		super(Subraces.GENASIFIRE.getName());
+		setSubrace(Subraces.GENASIFIRE);
 		addClass(new Barbarian(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);

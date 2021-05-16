@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.races.Genasi;
 
 public class GenasiEarth extends Genasi {
 	public GenasiEarth() {
-		super(Subraces.GENASIEARTH.getName());
+		setSubrace(Subraces.GENASIEARTH);
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class Hobgoblin extends Race {
 	public Hobgoblin() {
-		super(Races.HOBGOBLIN.getName());
+		super(Races.HOBGOBLIN);
 		addClass(new Barbarian(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);

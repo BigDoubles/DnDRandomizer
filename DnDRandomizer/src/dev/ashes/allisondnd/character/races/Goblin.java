@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 
 public class Goblin extends Race {
 	public Goblin() {
-		super(Races.GOBLIN.getName());
+		super(Races.GOBLIN);
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 2);
 		addClass(new Fighter(), 4);

@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.races.Aasimar;
 
 public class AasimarFallen extends Aasimar {
 	public AasimarFallen() {
-		super(Subraces.AASIMARFALLEN.getName());
+		setSubrace(Subraces.AASIMARFALLEN);
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 4);
 		addClass(new Cleric(), 5);

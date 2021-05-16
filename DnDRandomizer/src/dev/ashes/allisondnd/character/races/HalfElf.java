@@ -16,7 +16,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class HalfElf extends Race {
 	public HalfElf() {
-		super(Races.HALFELF.getName());
+		super(Races.HALFELF);
 		addClass(new Barbarian(), 3);
 		addClass(new Bard(), 6);
 		addClass(new Cleric(), 9);

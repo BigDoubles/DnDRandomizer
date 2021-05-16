@@ -1,6 +1,6 @@
 package dev.ashes.allisondnd.character.races;
 
-import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.Subrace;
 import dev.ashes.allisondnd.character.classes.Barbarian;
 import dev.ashes.allisondnd.character.classes.Bard;
 import dev.ashes.allisondnd.character.classes.Cleric;
@@ -14,9 +14,9 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 import dev.ashes.allisondnd.character.classes.Warlock;
 import dev.ashes.allisondnd.character.classes.Wizard;
 
-public abstract class Human extends Race {
-	public Human(String sub) {
-		super(sub + " " + Races.HUMAN.getName());
+public abstract class Human extends Subrace {
+	public Human() {
+		super(Races.HUMAN);
 		addClass(new Barbarian(), 3);
 		addClass(new Bard(), 6);
 		addClass(new Cleric(), 9);

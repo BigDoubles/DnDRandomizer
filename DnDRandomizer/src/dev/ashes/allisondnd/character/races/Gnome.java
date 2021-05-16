@@ -1,11 +1,10 @@
 package dev.ashes.allisondnd.character.races;
 
-import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.Subrace;
 
-public abstract class Gnome extends Race {
+public abstract class Gnome extends Subrace {
 
-	public Gnome(String sub) {
-		super(sub + " " + Races.GNOME.getName());
+	public Gnome() {
+		super(Races.GNOME);
 	}
-
 }

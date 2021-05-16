@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 public class Goliath extends Race {
 
 	public Goliath() {
-		super(Races.GOLIATH.getName());
+		super(Races.GOLIATH);
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

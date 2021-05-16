@@ -12,7 +12,7 @@ import dev.ashes.allisondnd.character.races.Elf;
 public class ElfSea extends Elf {
 
 	public ElfSea() {
-		super(Subraces.ELFSEA.getName());
+		setSubrace(Subraces.ELFSEA);
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 2);
 		addClass(new Fighter(), 4);

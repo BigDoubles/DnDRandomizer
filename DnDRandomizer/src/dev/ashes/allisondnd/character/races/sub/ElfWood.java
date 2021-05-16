@@ -15,7 +15,7 @@ import dev.ashes.allisondnd.character.races.Elf;
 public class ElfWood extends Elf {
 
 	public ElfWood() {
-		super(Subraces.ELFWOOD.getName());
+		setSubrace(Subraces.ELFWOOD);
 		addClass(new Bard(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);

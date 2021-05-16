@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.races.Halfling;
 
 public class HalflingLightfoot extends Halfling {
 	public HalflingLightfoot() {
-		super(Subraces.HALFLINGLIGHTFOOT.getName());
+		setSubrace(Subraces.HALFLINGLIGHTFOOT);
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);
 		addClass(new Fighter(), 5);

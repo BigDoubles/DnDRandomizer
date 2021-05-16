@@ -15,7 +15,7 @@ import dev.ashes.allisondnd.character.races.Dwarf;
 public class DwarfHill extends Dwarf {
 
 	public DwarfHill() {
-		super(Subraces.DWARFHILL.getName());
+		setSubrace(Subraces.DWARFHILL);
 		addClass(new Barbarian(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);

@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class Aarakocra extends Race {
 	public Aarakocra() {
-		super(Races.AARAKOCRA.getName());
+		super(Races.AARAKOCRA);
 
 		addClass(new Bard(), 1);
 		addClass(new Cleric(), 3);

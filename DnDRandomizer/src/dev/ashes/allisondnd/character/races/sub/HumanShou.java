@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanShou extends Human {
 	public HumanShou() {
-		super(Subraces.HUMANSHOU.getName());
+		setSubrace(Subraces.HUMANSHOU);
 	}
 }

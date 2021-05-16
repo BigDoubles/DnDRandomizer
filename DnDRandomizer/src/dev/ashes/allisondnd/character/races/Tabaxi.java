@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.classes.Warlock;
 
 public class Tabaxi extends Race {
 	public Tabaxi() {
-		super(Races.TABAXI.getName());
+		super(Races.TABAXI);
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);
 		addClass(new Fighter(), 5);

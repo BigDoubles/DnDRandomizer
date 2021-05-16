@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Dragonborn;
 public class DragonRavenite extends Dragonborn {
 
 	public DragonRavenite() {
-		super(Subraces.DRAGONRAVENITE.getName());
+		setSubrace(Subraces.DRAGONRAVENITE);
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

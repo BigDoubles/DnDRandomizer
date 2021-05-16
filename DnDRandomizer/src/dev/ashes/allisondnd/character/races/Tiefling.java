@@ -12,7 +12,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class Tiefling extends Race {
 	public Tiefling() {
-		super(Races.TIEFLING.getName());
+		super(Races.TIEFLING);
 		addClass(new Bard(), 2);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 4);

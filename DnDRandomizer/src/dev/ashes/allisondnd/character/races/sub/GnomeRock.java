@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.races.Gnome;
 
 public class GnomeRock extends Gnome {
 	public GnomeRock() {
-		super(Subraces.GNOMEROCK.getName());
+		setSubrace(Subraces.GNOMEROCK);
 		addClass(new Barbarian(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);

@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanChondathan extends Human {
 	public HumanChondathan() {
-		super(Subraces.HUMANCHONDATHAN.getName());
+		setSubrace(Subraces.HUMANCHONDATHAN);
 	}
 }

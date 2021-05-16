@@ -12,7 +12,7 @@ import dev.ashes.allisondnd.character.races.Elf;
 public class ElfEladrin extends Elf {
 
 	public ElfEladrin() {
-		super(Subraces.ELFELADRIN.getName());
+		setSubrace(Subraces.ELFELADRIN);
 		addClass(new Bard(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);

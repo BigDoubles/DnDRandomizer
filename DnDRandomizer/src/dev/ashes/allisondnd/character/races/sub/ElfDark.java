@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.races.Elf;
 public class ElfDark extends Elf {
 
 	public ElfDark() {
-		super(Subraces.ELFDARK.getName());
+		setSubrace(Subraces.ELFDARK);
 		addClass(new Bard(), 3);
 		addClass(new Cleric(), 4);
 		addClass(new Fighter(), 5);

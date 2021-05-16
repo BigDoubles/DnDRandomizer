@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.races.Genasi;
 
 public class GenasiWater extends Genasi {
 	public GenasiWater() {
-		super(Subraces.GENASIWATER.getName());
+		setSubrace(Subraces.GENASIWATER);
 		addClass(new Barbarian(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);

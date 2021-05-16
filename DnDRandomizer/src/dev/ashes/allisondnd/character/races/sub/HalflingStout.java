@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Halfling;
 
 public class HalflingStout extends Halfling {
 	public HalflingStout() {
-		super(Subraces.HALFLINGSTOUT.getName());
+		setSubrace(Subraces.HALFLINGSTOUT);
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 2);
 		addClass(new Fighter(), 4);

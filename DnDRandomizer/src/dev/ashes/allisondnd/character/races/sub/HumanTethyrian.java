@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanTethyrian extends Human {
 	public HumanTethyrian() {
-		super(Subraces.HUMANTETHYRIAN.getName());
+		setSubrace(Subraces.HUMANTETHYRIAN);
 	}
 }

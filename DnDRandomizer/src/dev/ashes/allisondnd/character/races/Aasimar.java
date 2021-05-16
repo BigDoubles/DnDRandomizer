@@ -1,9 +1,9 @@
 package dev.ashes.allisondnd.character.races;
 
-import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.Subrace;
 
-public abstract class Aasimar extends Race {
-	public Aasimar(String name) {
-		super(name + " " + Races.AASIMAR.getName());
+public abstract class Aasimar extends Subrace {
+	public Aasimar() {
+		super(Races.AASIMAR);
 	}
 }

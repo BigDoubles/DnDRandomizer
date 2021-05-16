@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import dev.ashes.allisondnd.character.races.Races;
+
 public abstract class Race {
 	private List<IClasses> classes;
 	private List<Integer> classWeights;
-	private String fullRaceName;
+	protected Races mainRace;
 
-	public Race(String name) {
+	public Race(Races race) {
 		classes = new ArrayList<IClasses>();
 		classWeights = new ArrayList<Integer>();
-		fullRaceName = name;
+
+		mainRace = race;
 	}
 
 	protected final void addClass(IClasses name, int weight) {
@@ -21,11 +24,12 @@ public abstract class Race {
 	}
 
 	public String getFullRaceName() {
-		return fullRaceName;
+		return mainRace.getName();
 	}
 
+	// Returns all info about the race, including class "weights"
 	public String getRaceInfo() {
-		String info = fullRaceName + ": ";
+		String info = getFullRaceName() + ": ";
 		for (int x = 0; x < classes.size(); x++) {
 			info += classes.get(x).getName() + " (" + classWeights.get(x) + "), ";
 		}
@@ -37,10 +41,8 @@ public abstract class Race {
 		Random r = new Random();
 		return getClassName(r.nextInt(getMaxDiceValue()));
 	}
-	
-	/*
-	 * Returns the value that is greatest without going over
-	 */
+
+	// Returns the value that is greatest without going over
 	public String getClassName(int roll) {
 		if (roll <= classWeights.get(0))
 			return classes.get(0).getName();
@@ -55,4 +57,5 @@ public abstract class Race {
 	public int getMaxDiceValue() {
 		return classWeights.get(classWeights.size() - 1);
 	}
+
 }

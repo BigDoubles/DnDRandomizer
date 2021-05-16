@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 
 public class Tortle extends Race {
 	public Tortle() {
-		super(Races.TORTLE.getName());
+		super(Races.TORTLE);
 		addClass(new Barbarian(), 2);
 		addClass(new Cleric(), 4);
 		addClass(new Druid(), 6);

@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Gnome;
 
 public class GnomeForest extends Gnome {
 	public GnomeForest() {
-		super(Subraces.GNOMEFOREST.getName());
+		setSubrace(Subraces.GNOMEFOREST);
 		addClass(new Bard(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);

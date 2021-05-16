@@ -13,7 +13,7 @@ import dev.ashes.allisondnd.character.races.Dragonborn;
 public class DragonDraconblood extends Dragonborn {
 
 	public DragonDraconblood() {
-		super(Subraces.DRAGONDRACONBLOOD.getName());
+		setSubrace(Subraces.DRAGONDRACONBLOOD);
 		addClass(new Bard(), 2);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 4);

@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanRashemi extends Human {
 	public HumanRashemi() {
-		super(Subraces.HUMANRASHEMI.getName());
+		setSubrace(Subraces.HUMANRASHEMI);
 	}
 }

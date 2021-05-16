@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 
 public class OrcOfExandria extends Race {
 	public OrcOfExandria() {
-		super(Races.ORCOFEXANDRIA.getName());
+		super(Races.ORCOFEXANDRIA);
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

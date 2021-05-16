@@ -10,7 +10,7 @@ import dev.ashes.allisondnd.character.classes.Sorcerer;
 
 public class HalfOrc extends Race {
 	public HalfOrc() {
-		super(Races.HALFORC.getName());
+		super(Races.HALFORC);
 		addClass(new Barbarian(), 3);
 		addClass(new Fighter(), 6);
 		addClass(new Monk(), 7);

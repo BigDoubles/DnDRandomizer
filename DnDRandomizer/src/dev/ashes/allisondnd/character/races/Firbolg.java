@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.classes.Wizard;
 public class Firbolg extends Race {
 
 	public Firbolg() {
-		super("Firbolg");
+		super(Races.FIRBOLG);
 		addClass(new Barbarian(), 2);
 		addClass(new Cleric(), 4);
 		addClass(new Druid(), 6);

@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanTurami extends Human {
 	public HumanTurami() {
-		super(Subraces.HUMANTURAMI.getName());
+		setSubrace(Subraces.HUMANTURAMI);
 	}
 }

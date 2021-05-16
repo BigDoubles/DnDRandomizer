@@ -1,9 +1,9 @@
 package dev.ashes.allisondnd.character.races;
 
-import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.Subrace;
 
-public abstract class Genasi extends Race {
-	public Genasi(String sub) {
-		super(sub + " " + Races.GENASI.getName());
+public abstract class Genasi extends Subrace {
+	public Genasi() {
+		super(Races.GENASI);
 	}
 }

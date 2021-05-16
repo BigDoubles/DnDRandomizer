@@ -61,9 +61,13 @@ public class CharacterRandomizer {
 
 	public static void main(String[] args) {
 		addRaces();
-		
+
 		new Window(races);
-		
+
+		for (Race r : races) {
+			System.out.println(r.getRaceInfo());
+			System.out.println(r.getFullRaceName());
+		}
 	}
 
 	private static void addRaces() {
@@ -80,7 +84,7 @@ public class CharacterRandomizer {
 		races.add(new Tabaxi());
 		races.add(new Tiefling());
 		races.add(new Tortle());
-		
+
 		races.add(new AasimarFallen());
 		races.add(new AasimarProtector());
 		races.add(new AasimarScourge());
@@ -121,7 +125,5 @@ public class CharacterRandomizer {
 		races.add(new HumanTethyrian());
 		races.add(new HumanTurami());
 	}
-	
-	
 
 }

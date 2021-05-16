@@ -4,6 +4,6 @@ import dev.ashes.allisondnd.character.races.Human;
 
 public class HumanIlluskan extends Human {
 	public HumanIlluskan() {
-		super(Subraces.HUMANILLUSKAN.getName());
+		setSubrace(Subraces.HUMANILLUSKAN);
 	}
 }

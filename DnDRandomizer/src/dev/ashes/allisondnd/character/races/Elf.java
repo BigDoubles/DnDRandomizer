@@ -1,10 +1,9 @@
 package dev.ashes.allisondnd.character.races;
 
-import dev.ashes.allisondnd.character.Race;
+import dev.ashes.allisondnd.character.Subrace;
 
-public abstract class Elf extends Race {
-	public Elf(String name) {
-		super(name + " " + Races.ELF.getName());
+public abstract class Elf extends Subrace {
+	public Elf() {
+		super(Races.ELF);
 	}
-
 }

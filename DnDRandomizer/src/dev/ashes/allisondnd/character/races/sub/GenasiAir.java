@@ -11,7 +11,7 @@ import dev.ashes.allisondnd.character.races.Genasi;
 
 public class GenasiAir extends Genasi {
 	public GenasiAir() {
-		super(Subraces.GENASIAIR.getName());
+		setSubrace(Subraces.GENASIAIR);
 		addClass(new Barbarian(), 1);
 		addClass(new Bard(), 2);
 		addClass(new Fighter(), 4);

@@ -14,7 +14,7 @@ import dev.ashes.allisondnd.character.races.Halfling;
 
 public class HalflingLotusden extends Halfling {
 	public HalflingLotusden() {
-		super(Subraces.HALFLINGLOTUSDEN.getName());
+		setSubrace(Subraces.HALFLINGLOTUSDEN);
 		addClass(new Bard(), 1);
 		addClass(new Cleric(), 3);
 		addClass(new Druid(), 5);
