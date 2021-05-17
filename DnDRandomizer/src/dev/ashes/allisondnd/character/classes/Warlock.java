@@ -13,8 +13,9 @@ public class Warlock implements IClasses {
 	}
 
 	enum subclasses{
-		CollegeofLore("College of Lore"),
-		CollegeofValor("College of Valor");
+		C1("The Archfey"),
+		G1("The Fiend"),
+		S1("The Great Old One");
 
 		private String title;
 		

@@ -15,7 +15,7 @@ public class Fighter implements IClasses {
 	enum subclasses{
 		Champion("Champion"),
 		Master("Battle Master"),
-		Echo("Echo Knight"),
+		Echo("Echo Knight*"),
 		Eldritch("Eldritch Knight");
 
 		private String title;

@@ -13,8 +13,8 @@ public class Sorcerer implements IClasses {
 	}
 	
 	enum subclasses{
-		CollegeofLore("College of Lore"),
-		CollegeofValor("College of Valor");
+		C1("Draconic Bloodline"),
+		C2("Wild Magic");
 
 		private String title;
 		

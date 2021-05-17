@@ -225,13 +225,20 @@ public class Window extends JFrame {
 	}
 	
 	private void updateTotalName() {
-		if(raceBox.getSelectedItem() == null || classBox.getSelectedItem() == null) return;
+		if(raceBox.getSelectedItem() == null || classBox.getSelectedItem() == null || subclassBox.getSelectedItem() == null) return;
 		
 		if(subraceBox.getSelectedItem() == null) {
 			totalName.setText(raceBox.getSelectedItem().toString());
 		}else {
 			totalName.setText(subraceBox.getSelectedItem().toString() + " " + raceBox.getSelectedItem().toString());
 		}
-		totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + " - " + subclassBox.getSelectedItem());
+		
+		//If there is an asterisk in race/subrace, and subclass, add another asterisks to the end
+		if(subclassBox.getSelectedItem().toString().contains("*") && totalName.getText().contains("*")) {
+			totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + " - " + subclassBox.getSelectedItem() + "*");
+		}else {
+			totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + " - " + subclassBox.getSelectedItem());
+		}
+		
 	}
 }

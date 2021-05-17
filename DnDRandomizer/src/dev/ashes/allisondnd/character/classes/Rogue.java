@@ -13,8 +13,10 @@ public class Rogue implements IClasses {
 	}
 	
 	enum subclasses{
-		CollegeofLore("College of Lore"),
-		CollegeofValor("College of Valor");
+		C1("Arcane Trickster"),
+		G1("Assassin"),
+		S8("Thief");
+
 
 		private String title;
 		
