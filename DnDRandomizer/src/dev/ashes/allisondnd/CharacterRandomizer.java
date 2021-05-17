@@ -28,12 +28,9 @@ import dev.ashes.allisondnd.character.races.sub.DwarfHill;
 import dev.ashes.allisondnd.character.races.sub.DwarfMountain;
 import dev.ashes.allisondnd.character.races.sub.ElfDark;
 import dev.ashes.allisondnd.character.races.sub.ElfEladrin;
-import dev.ashes.allisondnd.character.races.sub.ElfHighType1;
-import dev.ashes.allisondnd.character.races.sub.ElfHighType2;
+import dev.ashes.allisondnd.character.races.sub.ElfHigh;
 import dev.ashes.allisondnd.character.races.sub.ElfPallid;
 import dev.ashes.allisondnd.character.races.sub.ElfSea;
-import dev.ashes.allisondnd.character.races.sub.ElfType1;
-import dev.ashes.allisondnd.character.races.sub.ElfType2;
 import dev.ashes.allisondnd.character.races.sub.ElfWood;
 import dev.ashes.allisondnd.character.races.sub.GenasiAir;
 import dev.ashes.allisondnd.character.races.sub.GenasiEarth;
@@ -53,6 +50,7 @@ import dev.ashes.allisondnd.character.races.sub.HumanRashemi;
 import dev.ashes.allisondnd.character.races.sub.HumanShou;
 import dev.ashes.allisondnd.character.races.sub.HumanTethyrian;
 import dev.ashes.allisondnd.character.races.sub.HumanTurami;
+import dev.ashes.allisondnd.character.races.sub.Subraces;
 import dev.ashes.allisondnd.gui.Window;
 
 public class CharacterRandomizer {
@@ -63,11 +61,6 @@ public class CharacterRandomizer {
 		addRaces();
 
 		new Window(races);
-
-		for (Race r : races) {
-			System.out.println(r.getRaceInfo());
-			System.out.println(r.getFullRaceName());
-		}
 	}
 
 	private static void addRaces() {
@@ -96,13 +89,13 @@ public class CharacterRandomizer {
 		races.add(new DwarfMountain());
 		races.add(new ElfDark());
 		races.add(new ElfEladrin());
-		races.add(new ElfHighType1(ElfType1.GRAY));
-		races.add(new ElfHighType1(ElfType1.SILVANESTI));
-		races.add(new ElfHighType1(ElfType1.SUN));
-		races.add(new ElfHighType1(ElfType1.VALLEY));
-		races.add(new ElfHighType2(ElfType2.HIGH));
-		races.add(new ElfHighType2(ElfType2.MOON));
-		races.add(new ElfHighType2(ElfType2.QUALINESTI));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE1GRAY));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE1SILVANESTI));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE1SUN));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE1VALLEY));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE2HIGH));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE2MOON));
+		races.add(new ElfHigh(Subraces.ELFHIGHTYPE2QUALINESTI));
 		races.add(new ElfPallid());
 		races.add(new ElfSea());
 		races.add(new ElfWood());

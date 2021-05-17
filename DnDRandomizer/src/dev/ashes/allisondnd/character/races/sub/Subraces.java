@@ -7,14 +7,20 @@ public enum Subraces {
 	AASIMARPROTECTOR("Protector", Races.AASIMAR),
 	AASIMARSCOURGE("Scourge", Races.AASIMAR),
 	DRAGONDRACONBLOOD("Draconblood", Races.DRAGONBORN),
+	DRAGONDRAGONBORN("Dragonborn", Races.DRAGONBORN),
 	DRAGONRAVENITE("Ravenite", Races.DRAGONBORN),
 	DWARFDUERGAR("Duergar", Races.DWARF),
 	DWARFHILL("Hill", Races.DWARF),
 	DWARFMOUNTAIN("Mountain", Races.DWARF),
 	ELFDARK("Dark", Races.ELF),
 	ELFELADRIN("Eladrin", Races.ELF),
-	ELFHIGHTYPE1("Type One High", Races.ELF),
-	ELFHIGHTYPE2("Type Two High", Races.ELF),
+	ELFHIGHTYPE1GRAY("Gray Type One High", Races.ELF),
+	ELFHIGHTYPE1SILVANESTI("Silvanesti Type One High", Races.ELF),
+	ELFHIGHTYPE1VALLEY("Valley Type One High", Races.ELF),
+	ELFHIGHTYPE2HIGH("High Type Two High", Races.ELF),
+	ELFHIGHTYPE1SUN("Sun Type One High", Races.ELF),
+	ELFHIGHTYPE2QUALINESTI("Qualinesti Type Two High", Races.ELF),
+	ELFHIGHTYPE2MOON("Moon Type Two High", Races.ELF),
 	ELFPALLID("Pallid", Races.ELF),
 	ELFSEA("Sea", Races.ELF),
 	ELFWOOD("Wood", Races.ELF),
@@ -45,7 +51,8 @@ public enum Subraces {
 		parent = r;
 	}
 	
-	public String getName() {
+	@Override
+	public String toString() {
 		return name;
 	}
 	

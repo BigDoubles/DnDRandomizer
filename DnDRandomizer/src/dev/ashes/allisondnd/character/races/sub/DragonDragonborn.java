@@ -15,6 +15,7 @@ import dev.ashes.allisondnd.character.races.Races;
 public class DragonDragonborn extends Dragonborn {
 
 	public DragonDragonborn() {
+		setSubrace(Subraces.DRAGONDRAGONBORN);
 		addClass(new Barbarian(), 2);
 		addClass(new Bard(), 4);
 		addClass(new Cleric(), 5);
@@ -28,6 +29,6 @@ public class DragonDragonborn extends Dragonborn {
 
 	@Override
 	public String getFullRaceName() {
-		return Races.DRAGONBORN.getName();
+		return Races.DRAGONBORN.toString();
 	}
 }

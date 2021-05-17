@@ -19,10 +19,14 @@ public abstract class Subrace extends Race {
 
 	@Override
 	public String getFullRaceName() {
-		return subrace.getName() + " " + mainRace.getName();
+		return subrace.toString() + " " + mainRace.toString();
 	}
 
 	protected void setSubrace(Subraces sub) {
 		subrace = sub;
+	}
+	
+	public Subraces getSubrace() {
+		return subrace;
 	}
 }

@@ -9,12 +9,9 @@ import dev.ashes.allisondnd.character.classes.Rogue;
 import dev.ashes.allisondnd.character.classes.Wizard;
 import dev.ashes.allisondnd.character.races.Elf;
 
-public class ElfHighType1 extends Elf {
-	private ElfType1 type;
-
-	public ElfHighType1(ElfType1 et1) {
-		setSubrace(Subraces.ELFHIGHTYPE1);
-		type = et1;
+public class ElfHigh extends Elf {
+	public ElfHigh(Subraces sub) {
+		setSubrace(sub);
 		addClass(new Bard(), 1);
 		addClass(new Druid(), 2);
 		addClass(new Fighter(), 3);
@@ -22,10 +19,5 @@ public class ElfHighType1 extends Elf {
 		addClass(new Ranger(), 7);
 		addClass(new Rogue(), 10);
 		addClass(new Wizard(), 12);
-	}
-
-	@Override
-	public String getFullRaceName() {
-		return type.getName() + " " + subrace.getName() + " " + mainRace.getName();
 	}
 }

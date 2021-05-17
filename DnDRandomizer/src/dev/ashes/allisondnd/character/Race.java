@@ -22,35 +22,49 @@ public abstract class Race {
 		classes.add(name);
 		classWeights.add(weight);
 	}
-
+	
+	public Races getMainRace() {
+		return mainRace;
+	}
+	
 	public String getFullRaceName() {
-		return mainRace.getName();
+		return mainRace.toString();
 	}
 
 	// Returns all info about the race, including class "weights"
 	public String getRaceInfo() {
 		String info = getFullRaceName() + ": ";
 		for (int x = 0; x < classes.size(); x++) {
-			info += classes.get(x).getName() + " (" + classWeights.get(x) + "), ";
+			info += classes.get(x).toString() + " (" + classWeights.get(x) + "), ";
 		}
 		return info.substring(0, info.length() - 2);
+	}
+	
+	public List<IClasses> getClassesList(){
+		return classes;
 	}
 
 	// Simply returns a random class in the list with correct probabilities
 	public String getRandomClassName() {
 		Random r = new Random();
+		return getClassName(r.nextInt(getMaxDiceValue())).toString();
+	}
+	
+	// Simply returns a random class in the list with correct probabilities
+	public IClasses getRandomClass() {
+		Random r = new Random();
 		return getClassName(r.nextInt(getMaxDiceValue()));
 	}
 
 	// Returns the value that is greatest without going over
-	public String getClassName(int roll) {
+	public IClasses getClassName(int roll) {
 		if (roll <= classWeights.get(0))
-			return classes.get(0).getName();
+			return classes.get(0);
 		for (int x = 1; x < classWeights.size(); x++) {
 			if (classWeights.get(x - 1) < roll && roll <= classWeights.get(x))
-				return classes.get(x).getName();
+				return classes.get(x);
 		}
-		return "Invalid Dice Roll";
+		return null;
 	}
 
 	// Returns max value for a dice roll

@@ -1,5 +1,8 @@
 package dev.ashes.allisondnd.character;
 
+import java.util.List;
+
 public interface IClasses {
-	public String getName();
+	public String toString();
+	public List<String> getSubClasses();
 }
