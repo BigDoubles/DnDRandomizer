@@ -3,16 +3,26 @@ package dev.ashes.allisondnd.character.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.ashes.allisondnd.character.Backgrounds;
+import dev.ashes.allisondnd.character.DndClass;
 import dev.ashes.allisondnd.character.IClasses;
 
-public class Bard implements IClasses {
+public class Bard extends DndClass implements IClasses {
 
+	public Bard() {
+		int x = 2;
+		for(Backgrounds bg : Backgrounds.values()) {
+			addBackground(bg, x);
+			x += 2;
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Bard";
 	}
 	
-	enum subclasses{
+	static enum subclasses{
 		CollegeofLore("College of Lore"),
 		CollegeofValor("College of Valor");
 

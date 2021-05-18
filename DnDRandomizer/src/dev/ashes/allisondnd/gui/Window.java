@@ -6,12 +6,15 @@ import java.util.List;
 import java.util.Random;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import dev.ashes.allisondnd.character.Backgrounds;
+import dev.ashes.allisondnd.character.DndClass;
 import dev.ashes.allisondnd.character.IClasses;
 import dev.ashes.allisondnd.character.Race;
 import dev.ashes.allisondnd.character.Subrace;
@@ -24,15 +27,18 @@ public class Window extends JFrame {
 
 	private List<Race> raceList;
 
-	private JPanel racePanel, subracePanel, classPanel, subclassPanel;
-	private JLabel raceLabel, subraceLabel, classLabel, subclassLabel;
-	private JTextField totalName;
-	
+	private JPanel racePanel, subracePanel, classPanel, subclassPanel, backgroundPanel;
+	private JLabel raceLabel, subraceLabel, classLabel, subclassLabel, backgroundLabel;
 	private JComboBox<Races> raceBox;
 	private JComboBox<Subraces> subraceBox;
-	private JComboBox<IClasses> classBox;
+	private JComboBox<DndClass> classBox;
 	private JComboBox<String> subclassBox;
-	private JButton randomRace, randomSubrace, randomClass, randomSubclass;
+	private JComboBox<Backgrounds> backgroundBox;
+	private JButton randomRace, randomSubrace, randomClass, randomSubclass, randomBackground;
+	
+	private JTextField totalName;
+	private JCheckBox randomCheckbox;
+	
 
 	Random r;
 
@@ -41,36 +47,41 @@ public class Window extends JFrame {
 		raceList = races;
 		r = new Random();
 
-		this.setLayout(new FlowLayout());
+		this.setLayout(new FlowLayout(FlowLayout.LEFT));
 		racePanel = new JPanel();
 		subracePanel = new JPanel();
 		classPanel = new JPanel();
 		subclassPanel = new JPanel();
+		backgroundPanel = new JPanel();
 
 		raceLabel = new JLabel("Race: ");
 		subraceLabel = new JLabel("SubRace: ");
 		classLabel = new JLabel("Class: ");
 		subclassLabel = new JLabel("Subclass: ");
+		backgroundLabel = new JLabel("Backgound: ");
 
 		raceBox = new JComboBox<Races>();
 		subraceBox = new JComboBox<Subraces>();
-		classBox = new JComboBox<IClasses>();
+		classBox = new JComboBox<DndClass>();
 		subclassBox = new JComboBox<String>();
+		backgroundBox = new JComboBox<Backgrounds>();
 
-		randomRace = new JButton("Randomize Race/Subrace/Classes");
-		randomSubrace = new JButton("Randomize Only Subrace/Classes");
-		randomClass = new JButton("Randomize Only Class/Subclass");
+		randomRace = new JButton("Randomize Everything");
+		randomSubrace = new JButton("Randomize Everything but Race");
+		randomClass = new JButton("Randomize Only Class/Subclass/BG");
 		randomSubclass = new JButton("Randomize Only Subclass");
+		randomBackground = new JButton("Randomize Only Background");
 
 		totalName = new JTextField();
 		totalName.setEditable(false);
 		totalName.setPreferredSize(new Dimension(500, 20));
 		
+		randomCheckbox = new JCheckBox("Use weighted Randomization (AKA your custom numbers)", true);
+		
 		for (Races race : Races.values()) {
 			raceBox.addItem(race);
 		}
 		
-		// TODO fix this for pressing button as checklist is null for some reason, but n
 		// Action event listener for buttons
 		randomRace.addActionListener(a -> {
 			randomizeRace();
@@ -80,6 +91,8 @@ public class Window extends JFrame {
 			randomizeClass();
 			updateSubclassBox();
 			randomizeSubclass();
+			updateBackgroundBox();
+			randomizeBackground();
 			updateTotalName();
 		});
 		randomSubrace.addActionListener(a -> {
@@ -89,16 +102,26 @@ public class Window extends JFrame {
 			randomizeClass();
 			updateSubclassBox();
 			randomizeSubclass();
+			updateBackgroundBox();
+			randomizeBackground();
 			updateTotalName();
 		});
 		randomClass.addActionListener(a -> {
 			randomizeClass();
 			updateSubclassBox();
 			randomizeSubclass();
+			updateBackgroundBox();
+			randomizeBackground();
 			updateTotalName();
 		});
 		randomSubclass.addActionListener(a -> {
 			randomizeSubclass();
+			updateBackgroundBox();
+			randomizeBackground();
+			updateTotalName();
+		});
+		randomBackground.addActionListener(a -> {
+			randomizeBackground();
 			updateTotalName();
 		});
 		
@@ -108,18 +131,26 @@ public class Window extends JFrame {
 			updateSubraceBox();
 			updateClassBox();
 			updateSubclassBox();
+			updateBackgroundBox();
 			updateTotalName();
 		});
 		subraceBox.addActionListener(a -> {
 			updateClassBox();
 			updateSubclassBox();
+			updateBackgroundBox();
 			updateTotalName();
 		});
 		classBox.addActionListener(a -> {
 			updateSubclassBox();
+			updateBackgroundBox();
+			updateBackgroundBox();
 			updateTotalName();
 		});
 		subclassBox.addActionListener(a -> {
+			updateBackgroundBox();
+			updateTotalName();
+		});
+		backgroundBox.addActionListener(a -> {
 			updateTotalName();
 		});
 		
@@ -135,6 +166,9 @@ public class Window extends JFrame {
 		subclassPanel.add(subclassLabel);
 		subclassPanel.add(subclassBox);
 		subclassPanel.add(randomSubclass);
+		backgroundPanel.add(backgroundLabel);
+		backgroundPanel.add(backgroundBox);
+		backgroundPanel.add(randomBackground);
 
 		
 		this.add(totalName);
@@ -142,12 +176,15 @@ public class Window extends JFrame {
 		this.add(subracePanel);
 		this.add(classPanel);
 		this.add(subclassPanel);
+		this.add(backgroundPanel);
+		this.add(randomCheckbox);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(550, 380);
 		this.setResizable(false);
 		
 		updateClassBox();
 		updateSubclassBox();
+		updateBackgroundBox();
 		updateTotalName();
 		
 		this.setVisible(true);
@@ -163,6 +200,7 @@ public class Window extends JFrame {
 		}
 	}
 	
+	// Randomizes the selected class 
 	private void randomizeClass() {
 		Race actualRace = null;
 		for(Race r : raceList) {
@@ -178,7 +216,8 @@ public class Window extends JFrame {
 				}
 			}
 		}
-		classBox.setSelectedItem(actualRace.getRandomClass());
+		if(randomCheckbox.isSelected())	classBox.setSelectedItem(actualRace.getRandomClass());
+		else classBox.setSelectedItem(classBox.getItemAt(r.nextInt(classBox.getItemCount())));
 	}
 	
 	private void randomizeSubclass() {
@@ -186,6 +225,15 @@ public class Window extends JFrame {
 			subclassBox.setSelectedItem(subclassBox.getItemAt(r.nextInt(subclassBox.getItemCount())));
 		}
 	}
+	
+	private void randomizeBackground() {
+		if(backgroundBox.getItemCount() > 0) {
+			if(randomCheckbox.isSelected()) {
+				backgroundBox.setSelectedItem(((DndClass) classBox.getSelectedItem()).getRandomBackground(getStarredItems()));
+			}
+		}
+	}
+	
 	
 	private void updateSubraceBox() {
 		subraceBox.removeAllItems();
@@ -196,7 +244,7 @@ public class Window extends JFrame {
 	
 	private void updateClassBox() {
 		
-		List<IClasses> classList = null;
+		List<DndClass> classList = null;
 		classBox.removeAllItems();
 		for(Race r : raceList) {
 			if(r.getMainRace() == raceBox.getSelectedItem()) {
@@ -212,7 +260,7 @@ public class Window extends JFrame {
 			}
 		}
 		if(classList == null) return;
-		for(IClasses c : classList) {
+		for(DndClass c : classList) {
 			classBox.addItem(c);
 		}
 	}
@@ -224,21 +272,45 @@ public class Window extends JFrame {
 		for(String s : subclasses) subclassBox.addItem(s);
 	}
 	
+	private void updateBackgroundBox() {
+		if(classBox.getSelectedItem() == null || subclassBox.getSelectedItem() == null) return;
+		backgroundBox.removeAllItems();
+		
+		for(Backgrounds bg : ((DndClass) classBox.getSelectedItem()).getBackgroundsList(getStarredItems())) {
+			backgroundBox.addItem(bg);
+		}
+	}
+	
 	private void updateTotalName() {
 		if(raceBox.getSelectedItem() == null || classBox.getSelectedItem() == null || subclassBox.getSelectedItem() == null) return;
 		
-		if(subraceBox.getSelectedItem() == null) {
-			totalName.setText(raceBox.getSelectedItem().toString());
-		}else {
-			totalName.setText(subraceBox.getSelectedItem().toString() + " " + raceBox.getSelectedItem().toString());
-		}
+		if(subraceBox.getSelectedItem() == null) totalName.setText(raceBox.getSelectedItem().toString());
+		else totalName.setText(raceBox.getSelectedItem().toString() + ", " + subraceBox.getSelectedItem().toString());
+		totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + ", " + subclassBox.getSelectedItem() + ", " + backgroundBox.getSelectedItem());
 		
-		//If there is an asterisk in race/subrace, and subclass, add another asterisks to the end
-		if(subclassBox.getSelectedItem().toString().contains("*") && totalName.getText().contains("*")) {
-			totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + " - " + subclassBox.getSelectedItem() + "*");
-		}else {
-			totalName.setText(totalName.getText() + ", " + classBox.getSelectedItem().toString() + " - " + subclassBox.getSelectedItem());
+		// Add a second * to the second item in title if needed
+		String text = totalName.getText();
+		if(text.contains("*")) {
+			int x = text.indexOf("*");
+			String pt1 = text.substring(0, x+1);
+			String pt2 = text.substring(x+1);
+			
+			if(pt2.contains("*")) {
+				x = pt2.indexOf("*");
+				String pt3 = pt2.substring(0, x+1);
+				String pt4 = pt2.substring(x+1);
+				totalName.setText(pt1 + pt3 + "*" + pt4);
+			}
 		}
-		
+	}
+	
+	// Checks if 2 of the items already have stars
+	// Used for determining Backgrounds generation
+	private boolean getStarredItems() {
+		int x = 0;
+		if(raceBox.getSelectedItem().toString().contains("*")) x++;
+		if(subclassBox.getSelectedItem().toString().contains("*")) x++;
+		if(subraceBox.getSelectedItem() != null && subraceBox.getSelectedItem().toString().contains("*")) x++;
+		return x < 2;
 	}
 }

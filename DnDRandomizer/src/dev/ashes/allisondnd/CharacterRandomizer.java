@@ -59,7 +59,7 @@ public class CharacterRandomizer {
 
 	public static void main(String[] args) {
 		addRaces();
-
+		
 		new Window(races);
 	}
 

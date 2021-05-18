@@ -7,18 +7,18 @@ import java.util.Random;
 import dev.ashes.allisondnd.character.races.Races;
 
 public abstract class Race {
-	private List<IClasses> classes;
+	private List<DndClass> classes;
 	private List<Integer> classWeights;
 	protected Races mainRace;
 
 	public Race(Races race) {
-		classes = new ArrayList<IClasses>();
+		classes = new ArrayList<DndClass>();
 		classWeights = new ArrayList<Integer>();
 
 		mainRace = race;
 	}
 
-	protected final void addClass(IClasses name, int weight) {
+	protected final void addClass(DndClass name, int weight) {
 		classes.add(name);
 		classWeights.add(weight);
 	}
@@ -30,17 +30,8 @@ public abstract class Race {
 	public String getFullRaceName() {
 		return mainRace.toString();
 	}
-
-	// Returns all info about the race, including class "weights"
-	public String getRaceInfo() {
-		String info = getFullRaceName() + ": ";
-		for (int x = 0; x < classes.size(); x++) {
-			info += classes.get(x).toString() + " (" + classWeights.get(x) + "), ";
-		}
-		return info.substring(0, info.length() - 2);
-	}
 	
-	public List<IClasses> getClassesList(){
+	public List<DndClass> getClassesList(){
 		return classes;
 	}
 
@@ -51,13 +42,13 @@ public abstract class Race {
 	}
 	
 	// Simply returns a random class in the list with correct probabilities
-	public IClasses getRandomClass() {
+	public DndClass getRandomClass() {
 		Random r = new Random();
 		return getClassName(r.nextInt(getMaxDiceValue()));
 	}
 
 	// Returns the value that is greatest without going over
-	public IClasses getClassName(int roll) {
+	public DndClass getClassName(int roll) {
 		if (roll <= classWeights.get(0))
 			return classes.get(0);
 		for (int x = 1; x < classWeights.size(); x++) {

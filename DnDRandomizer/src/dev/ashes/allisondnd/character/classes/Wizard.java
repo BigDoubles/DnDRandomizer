@@ -3,16 +3,33 @@ package dev.ashes.allisondnd.character.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import dev.ashes.allisondnd.character.Backgrounds;
+import dev.ashes.allisondnd.character.DndClass;
 import dev.ashes.allisondnd.character.IClasses;
 
-public class Wizard implements IClasses {
+public class Wizard extends DndClass implements IClasses {
 
+	public Wizard() {
+		addBackground(Backgrounds.Acolyte, 2);
+		addBackground(Backgrounds.AcolyteBG, 4);
+		addBackground(Backgrounds.GuildArt, 5);
+		addBackground(Backgrounds.GuildArtBG, 6);
+		addBackground(Backgrounds.GuildMerch, 7);
+		addBackground(Backgrounds.Hermit, 9);
+		addBackground(Backgrounds.HermitBG, 11);
+		addBackground(Backgrounds.Knight, 12);
+		addBackground(Backgrounds.Noble, 13);
+		addBackground(Backgrounds.NobleBG, 14);
+		addBackground(Backgrounds.Sage, 16);
+		addBackground(Backgrounds.SageBG, 18);
+	}
+	
 	@Override
 	public String toString() {
 		return "Wizard";
 	}
 
-	enum subclasses{
+	static enum subclasses{
 		C1("Chronurgy Magic*"),
 		G1("Graviturgy Magic*"),
 		S1("School of Abjuration"),
