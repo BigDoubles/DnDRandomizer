@@ -24,6 +24,8 @@ import dev.ashes.allisondnd.character.races.sub.Subraces;
 public class Window extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private static final int mainVersion = 1;
+	private static final int minorVersion = 2;
 
 	private List<Race> raceList;
 
@@ -43,7 +45,7 @@ public class Window extends JFrame {
 	Random r;
 
 	public Window(List<Race> races) {
-		super("DnD Randomizer");
+		super("DnD Randomizer V" + mainVersion + "." + minorVersion);
 		raceList = races;
 		r = new Random();
 
@@ -230,6 +232,8 @@ public class Window extends JFrame {
 		if(backgroundBox.getItemCount() > 0) {
 			if(randomCheckbox.isSelected()) {
 				backgroundBox.setSelectedItem(((DndClass) classBox.getSelectedItem()).getRandomBackground(getStarredItems()));
+			}else {
+				backgroundBox.setSelectedIndex(r.nextInt(backgroundBox.getItemCount()));
 			}
 		}
 	}
