@@ -42,11 +42,11 @@ public abstract class DndClass implements IClasses{
 
 	// Returns the value that is greatest without going over
 	private Backgrounds getBackground(int roll, List<Backgrounds> list, List<Integer> weights) {
-		if (roll <= bgWeights.get(0))
-			return backgrounds.get(0);
-		for (int x = 1; x < bgWeights.size(); x++) {
-			if (bgWeights.get(x - 1) < roll && roll <= bgWeights.get(x))
-				return backgrounds.get(x);
+		if (roll <= weights.get(0))
+			return list.get(0);
+		for (int x = 1; x < weights.size(); x++) {
+			if (weights.get(x - 1) < roll && roll <= weights.get(x))
+				return list.get(x);
 		}
 		return null;
 	}
