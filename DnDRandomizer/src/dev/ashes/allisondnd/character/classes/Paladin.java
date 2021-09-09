@@ -28,6 +28,7 @@ public class Paladin extends DndClass implements IClasses {
 		addBackground(Backgrounds.SailorBG, 23);
 		addBackground(Backgrounds.Soldier, 25);
 		addBackground(Backgrounds.SoldierBG, 27);
+		addBackground(Backgrounds.Haunted, 29);
 	}
 	@Override
 	public String toString() {

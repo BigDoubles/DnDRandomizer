@@ -26,6 +26,7 @@ public class Druid extends DndClass implements IClasses {
 		addBackground(Backgrounds.SageBG, 20);
 		addBackground(Backgrounds.Sailor, 21);
 		addBackground(Backgrounds.SailorBG, 22);
+		addBackground(Backgrounds.Haunted, 24);
 	}
 	
 	@Override

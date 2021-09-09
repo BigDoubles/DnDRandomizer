@@ -16,6 +16,7 @@ public enum Backgrounds {
 	GuildArt("Guild Artisan"),
 	GuildArtBG("Guild Artisan - Baldur's Gate*"),
 	GuildMerch("Guild Merchant"),
+	Haunted("Haunted One*"),
 	Hermit("Hermit"),
 	HermitBG("Hermit - Baldur's Gate*"),
 	Knight("Knight"),
@@ -34,6 +35,7 @@ public enum Backgrounds {
 	Urchin("Urchin"),
 	UrchinBG("Urchin - Baldur's Gate*"),
 	VolstruckerAgent("Volstrucker Agent*");
+	
 	
 	private String name;
 	

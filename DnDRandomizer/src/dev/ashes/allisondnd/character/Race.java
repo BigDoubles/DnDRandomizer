@@ -37,14 +37,12 @@ public abstract class Race {
 
 	// Simply returns a random class in the list with correct probabilities
 	public String getRandomClassName() {
-		Random r = new Random();
-		return getClassName(r.nextInt(getMaxDiceValue())).toString();
+		return getClassName(getRandomRoll()).toString();
 	}
 	
 	// Simply returns a random class in the list with correct probabilities
 	public DndClass getRandomClass() {
-		Random r = new Random();
-		return getClassName(r.nextInt(getMaxDiceValue()));
+		return getClassName(getRandomRoll());
 	}
 
 	// Returns the value that is greatest without going over
@@ -59,8 +57,13 @@ public abstract class Race {
 	}
 
 	// Returns max value for a dice roll
-	public int getMaxDiceValue() {
+	private int getMaxDiceValue() {
 		return classWeights.get(classWeights.size() - 1);
 	}
-
+	
+	// Returns a random dice roll offset by one as Allison's list is not 0 indexed
+	private int getRandomRoll() {
+		Random r = new Random();
+		return r.nextInt(getMaxDiceValue()) + 1;
+	}
 }

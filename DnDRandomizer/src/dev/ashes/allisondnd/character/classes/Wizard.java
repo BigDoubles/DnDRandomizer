@@ -22,6 +22,7 @@ public class Wizard extends DndClass implements IClasses {
 		addBackground(Backgrounds.NobleBG, 14);
 		addBackground(Backgrounds.Sage, 16);
 		addBackground(Backgrounds.SageBG, 18);
+		addBackground(Backgrounds.Haunted, 20);
 	}
 	
 	@Override

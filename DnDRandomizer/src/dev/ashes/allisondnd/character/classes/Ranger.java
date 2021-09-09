@@ -30,6 +30,7 @@ public class Ranger extends DndClass implements IClasses {
 		addBackground(Backgrounds.Urchin, 25);
 		addBackground(Backgrounds.UrchinBG, 26);
 		addBackground(Backgrounds.VolstruckerAgent, 27);
+		addBackground(Backgrounds.Haunted, 29);
 	}
 	
 	@Override

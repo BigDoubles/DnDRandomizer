@@ -32,6 +32,7 @@ public class Fighter extends DndClass implements IClasses {
 		addBackground(Backgrounds.SailorBG, 27);
 		addBackground(Backgrounds.Soldier, 29);
 		addBackground(Backgrounds.SoldierBG, 31);
+		addBackground(Backgrounds.Haunted, 33);
 	}
 	
 	@Override

@@ -20,6 +20,7 @@ public class Barbarian extends DndClass implements IClasses {
 		addBackground(Backgrounds.SailorBG, 15);
 		addBackground(Backgrounds.Soldier, 17);
 		addBackground(Backgrounds.SoldierBG, 19);
+		addBackground(Backgrounds.Haunted, 21);
 	}
 	
 	@Override

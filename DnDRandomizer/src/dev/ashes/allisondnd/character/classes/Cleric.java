@@ -22,6 +22,7 @@ public class Cleric extends DndClass implements IClasses {
 		addBackground(Backgrounds.NobleBG, 20);
 		addBackground(Backgrounds.Sage, 21);
 		addBackground(Backgrounds.SageBG, 22);
+		addBackground(Backgrounds.Haunted, 24);
 	}
 	
 	@Override

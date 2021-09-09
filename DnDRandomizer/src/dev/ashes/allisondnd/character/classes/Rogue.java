@@ -37,6 +37,7 @@ public class Rogue extends DndClass implements IClasses {
 		addBackground(Backgrounds.Urchin, 43);
 		addBackground(Backgrounds.UrchinBG, 45);
 		addBackground(Backgrounds.VolstruckerAgent, 47);
+		addBackground(Backgrounds.Haunted, 49);
 	}
 	
 	@Override

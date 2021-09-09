@@ -32,6 +32,7 @@ public class Sorcerer extends DndClass implements IClasses {
 		addBackground(Backgrounds.SoldierBG, 26);
 		addBackground(Backgrounds.Spy, 27);
 		addBackground(Backgrounds.VolstruckerAgent, 28);
+		addBackground(Backgrounds.Haunted, 30);
 	}
 	
 	@Override

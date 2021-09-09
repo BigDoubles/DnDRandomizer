@@ -29,6 +29,7 @@ public class Warlock extends DndClass implements IClasses {
 		addBackground(Backgrounds.SoldierBG, 22);
 		addBackground(Backgrounds.Spy, 23);
 		addBackground(Backgrounds.VolstruckerAgent, 24);
+		addBackground(Backgrounds.Haunted, 26);
 	}
 	
 	@Override

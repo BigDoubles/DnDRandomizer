@@ -37,6 +37,7 @@ public class Monk extends DndClass implements IClasses {
 		addBackground(Backgrounds.Urchin, 27);
 		addBackground(Backgrounds.UrchinBG, 28);
 		addBackground(Backgrounds.VolstruckerAgent, 29);
+		addBackground(Backgrounds.Haunted, 31);
 	}
 	
 	@Override
